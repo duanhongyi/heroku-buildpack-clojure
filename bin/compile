@@ -39,6 +39,7 @@ curl --retry 3 -sfL --max-time 60 -o "/tmp/$CLOJURE_INSTALL_NAME" "$CLOJURE_INST
 chmod +x /tmp/$CLOJURE_INSTALL_NAME
 mkdir -p $BUILD_DIR/.heroku/clj
 "/tmp/$CLOJURE_INSTALL_NAME" --prefix $BUILD_DIR/.heroku/clj | sed -u 's/^/       /'
+sleep 300
 chmod +x $BUILD_DIR/.heroku/clj/bin/*
 export PATH=$BUILD_DIR/.heroku/clj/bin:$PATH
 
