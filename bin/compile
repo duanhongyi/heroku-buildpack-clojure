@@ -38,7 +38,7 @@ CLOJURE_INSTALL_URL="https://download.clojure.org/install/$CLOJURE_INSTALL_NAME"
 curl --retry 3 -sfL --max-time 60 -o "/tmp/$CLOJURE_INSTALL_NAME" "$CLOJURE_INSTALL_URL"
 chmod +x /tmp/$CLOJURE_INSTALL_NAME
 mkdir -p $BUILD_DIR/.heroku/clj
-"/tmp/$CLOJURE_INSTALL_NAME" --prefix $BUILD_DIR/.heroku/clj 2>/dev/null | sed -u 's/^/       /'
+"/tmp/$CLOJURE_INSTALL_NAME" --prefix $BUILD_DIR/.heroku/clj | sed -u 's/^/       /'
 chmod +x $BUILD_DIR/.heroku/clj/bin/*
 export PATH=$BUILD_DIR/.heroku/clj/bin:$PATH
 
